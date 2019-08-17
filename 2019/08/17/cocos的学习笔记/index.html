@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | 一个宅男的自我救赎</title>
+  <title>cocos的学习笔记 | 一个宅男的自我救赎</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="life&amp;work&amp;fun">
+  <meta name="description" content="#header {     background-color:black;     color:white;     text-align:center;     padding:5px; } #section {     width:800px;     float:left;     padding:10px;           } #footer {     background-co">
 <meta name="keywords" content="cocos">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一个宅男的自我救赎">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cocos的学习笔记">
+<meta property="og:url" content="http://yoursite.com/2019/08/17/cocos的学习笔记/index.html">
 <meta property="og:site_name" content="一个宅男的自我救赎">
-<meta property="og:description" content="life&amp;work&amp;fun">
+<meta property="og:description" content="#header {     background-color:black;     color:white;     text-align:center;     padding:5px; } #section {     width:800px;     float:left;     padding:10px;           } #footer {     background-co">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-17T12:25:52.141Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一个宅男的自我救赎">
-<meta name="twitter:description" content="life&amp;work&amp;fun">
+<meta name="twitter:title" content="cocos的学习笔记">
+<meta name="twitter:description" content="#header {     background-color:black;     color:white;     text-align:center;     padding:5px; } #section {     width:800px;     float:left;     padding:10px;           } #footer {     background-co">
   
     <link rel="alternative" href="/atom.xml" title="一个宅男的自我救赎" type="application/atom+xml">
   
@@ -158,49 +159,248 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-cocos的学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/17/cocos的学习笔记/" class="archive-article-date">
-  	<time datetime="2019-08-17T12:13:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/17/cocos的学习笔记/">cocos的学习笔记</a>
+    <h1 class="article-title" itemprop="name">
+      cocos的学习笔记
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2019/08/17/cocos的学习笔记/" class="archive-article-date">
+  	<time datetime="2019-08-17T12:13:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <head><meta name="generator" content="Hexo 3.9.0">
+<style>
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#section {
+    width:800px;
+    float:left;
+    padding:10px;          
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;          
+}
+</style>
+</head>
 
+<body>
+
+<div id="header"><h1>cocos的学习笔记一！</h1></div>
+<div id="section">
+  <h2>坐标系</h2>
+  <p>世界坐标是场景内的统一坐标，本地坐标也称为相对坐标，和节点相关联</p>
+  <p>node之间存在父子层级关系，我们修改node节点位置，是该node相对于父节点的本地坐标系而非世界坐标系</p>
+  <a id="more"></a>   
+  <h2>锚点</h2>
+  <p>锚点由<code>anchorX anchorY</code>表示，（0.5，0.5）为该节点的中心</p>
+  <h2>旋转</h2>
+  <p>旋转的圆心就是该节点的锚点，设定<code>Rotation</code>的数值</p>
+  <p><code>cc.RotateBy(duration, deltaAngleX, deltaAngleY)和cc.RotateTo(duration, deltaAngleX, deltaAngleY)    
+   </code>     具体可以这样写：先声明一个运动rotate=cc.rotateby()，之后设定一个循环rep=repeatForever(rotate),对node使用runAction（rep）就可以了。
+      ps：repeat（action，次数），repeatforeve（action）
+    </p>
+    <h2>容器动作</h2>
+    <p>
+        <a href="https://www.cnblogs.com/zhen-prz/p/10955573.html" target="_blank">动作系统实例</a>
+        1.顺序动作cc.sequence;
+        2.同步动作cc.spawn,var spawn = cc.spawn(cc.moveBy(0.5, 0, 50), cc.scaleTo(0.5, 0.8, 1.4));自动做在节点同步叠加。
+        3.速度动作 var action = cc.speed(
+                 cc.spawn(
+                     cc.moveBy(2, 0, 50),
+                     cc.scaleTo(2, 0.8, 1.4)
+                 ), 2); // 让目标动作速度加快一倍，相当于原本2秒的动作在1秒内完成
+    </p>
+   <h2>动作回调</h2>
+    <a href="https://docs.cocos.com/creator/manual/zh/getting-started/quick-start.html" target="_blank">回调的实例</a>
+    <p>
+    cc.CallFunc(selector, selectorTarget, data);第一个参数是方法的 selector，我们可以理解为方法名。第二个参数是 Object 类型，一般填入 this。第三个参数为带回的数据，可以是所有的数据类型，可以不填。我们再注意到这个方法的返回值 —— ActionInstant，这是一个瞬间执行的动作类。到这里我们就可以理解了，使用 callFunc 调用回调函数可以让函数转变为 cc 中的 Action（动作），这一用法在 cc 的动作系统里非常实用！例如在上面我们将播放声音的函数传入 callFunc 赋值给 callback，让 callback 成为了一个播放声音的动作 Action，那么我们之后就能通过 cc.sequence 将跳跃和播放声音的动作组合起来，实现每跳一次就能播放音效的功能！
+    </p>
+    <h2>碰撞</h2>
+    <p>
+    onCollisionEnter:function(other,self),碰撞事件开始。<br>
+        onCollisionStay:function(other,self),碰撞事件持续中。<br>
+        onCollisionExit；function（other，self），碰撞事件结束。
+    </p>
+     <h2>触摸时事件&API</h2>
+    <p>
+    cc.Node.EventType.TOUCH_START(手指落在触摸区域时)<br>
+        cc.Node.EventType.TOUCH_MOVE（手指在触摸区内移动时）<br>
+        cc.Node.EventType.TOUCH_END（手指在触摸区域内离开）<br>
+        cc.Node.EventType.TOUCH_CANCEL（手指在触摸区域外离开）<br>       
+    </p>
+    <h3>API</h3>
+    <p>
+    touch，getID,getLocation,getLocationX,getLocationY,getPreviousLocation,getStartLocation,getDelta
+    </p>
+    <h2>物体跟随手指移动</h2>
+    <p>
+    先开启监听事件 this.node.on(cc.Node.EventType.TOUCH_MOVE,this.onTouchMove,this);
+        onTouchMove(event){var delta=event.touch.getDelta;<br>
+        this.node.x+=delta.x;<br>
+        this.node.y+=delta.y;<br>
+        },<br>
+        或者(注意此种方式容易出现抖动，尝试改变一下开启监听是在node还是node的父节点，还有坐标转换时时转换到node还是node的父节点)<br>
+        onTouchMove(event){<br>
+        var touch=event.getTouches();<br>
+        var newPos=this.node.convertToNodeSpaceAR(touch[0].getLocation());<br>
+        this.node.position=newPos;<br>
+        },
+    </p>
+    <h2>刚体的速度</h2>
+    <p>  onLoad() {<br>
+        //角度转弧度<br>
+        let r = cc.misc.degreesToRadians(this.node.rotation);<br>
+        //弧度向量化<br>
+        let v22 = cc.v2(0, 1).rotate(-r);<br>
+        let rb = this.node.getComponent(cc.RigidBody);<br>
+        //设定刚体速度<br>
+        rb.linearVelocity = cc.v2(v22.x * 50, v22.y * 50);<br>
+
+<pre><code>},&lt;br/&gt;
+    //此物体遇到另外一个物体，即destory&lt;br/&gt;
+onBeginContact() {&lt;br/&gt;
+    this.node.destroy();&lt;br/&gt;
+},&lt;/p&gt;
+&lt;h2&gt;摇杆&lt;h2&gt;</code></pre>  </p></div>
+
+</body>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/17/cocos的学习笔记/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -223,8 +423,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
