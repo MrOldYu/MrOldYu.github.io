@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>cocos学习笔记2 | 一个宅男的自我救赎</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="语法规则：1、数据用键值对标识；2、每条数据使用逗号分开；3、花括号{}保存对象；4、方括号[]保存数组。">
+  <meta name="description" content="语法规则： 1、数据用键值对标识； 2、每条数据使用逗号分开； 3、花括号{}保存对象； 4、方括号[]保存数组。">
 <meta name="keywords" content="cocos">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cocos学习笔记2">
 <meta property="og:url" content="http://yoursite.com/2019/08/19/cocos学习笔记2/index.html">
 <meta property="og:site_name" content="一个宅男的自我救赎">
-<meta property="og:description" content="语法规则：1、数据用键值对标识；2、每条数据使用逗号分开；3、花括号{}保存对象；4、方括号[]保存数组。">
+<meta property="og:description" content="语法规则： 1、数据用键值对标识； 2、每条数据使用逗号分开； 3、花括号{}保存对象； 4、方括号[]保存数组。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-19T12:16:42.322Z">
+<meta property="og:updated_time" content="2019-08-20T15:29:06.892Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cocos学习笔记2">
-<meta name="twitter:description" content="语法规则：1、数据用键值对标识；2、每条数据使用逗号分开；3、花括号{}保存对象；4、方括号[]保存数组。">
+<meta name="twitter:description" content="语法规则： 1、数据用键值对标识； 2、每条数据使用逗号分开； 3、花括号{}保存对象； 4、方括号[]保存数组。">
   
     <link rel="alternative" href="/atom.xml" title="一个宅男的自我救赎" type="application/atom+xml">
   
@@ -179,9 +179,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>语法规则：<br>1、数据用键值对标识；<br>2、每条数据使用逗号分开；<br>3、花括号{}保存对象；<br>4、方括号[]保存数组。</p>
+        <meta name="referrer" content="no-referrer">
+语法规则：
+1、数据用键值对标识；
+2、每条数据使用逗号分开；
+3、花括号{}保存对象；
+4、方括号[]保存数组。
 <a id="more"></a>
-<p>josn的值类型：<br>1、null；<br>2、boolen；<br>3、number；<br>4、string；<br>5、数组；<br>6、对象；</p>
+josn的值类型：
+1、null；
+2、boolen；
+3、number；
+4、string；
+5、数组；
+6、对象；
+
 <p>josn实例：<br>{“name”:”yudada”,”age”:28,”array”:[1,2,3]}</p>
 <p>josn在cocos中的应用：</p>
 <p>配合cc.loader.loadRes(url(可以利用josn的数据取得要载入数据的地址)，type（载入数据的类型），function（err(是否有报错),res（载入的数据））{<br>if(err){<br>console.log(err);<br>return;<br>}<br>if(!err){<br>this.node.getComponent(cc.Sprite).spriteFrame=res;<br>}</p>
